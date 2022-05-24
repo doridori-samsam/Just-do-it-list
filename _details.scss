@@ -1,0 +1,53 @@
+header{
+    h1{
+        font-size: 3rem;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+    h2{
+        font-size: 1.8rem;
+        color: rgb(151, 207, 255);
+    }
+}
+
+
+form {
+    input{
+        border:none;
+        border-bottom: 2px solid white;
+        outline: 1px;
+        font-size: 1.5rem;
+        width: 700px;
+        padding: 8px;
+        background-color: transparent;
+        color: white;
+        &::placeholder{
+            color: rgb(151, 207, 255);
+        }
+        
+    }
+
+    input:focus::-webkit-input-placeholder {
+        color: transparent;
+    }
+      input:focus::-moz-placeholder {
+        color: transparent;
+    }
+      input:focus:-ms-input-placeholder {
+        color: transparent;
+    }
+      input:focus::-ms-input-placeholder {
+        color: transparent;
+    }
+
+    button{
+        vertical-align: bottom;
+        width: 90px;
+        height: 40px;
+        background-color: rgb(30, 111, 233);
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: white;
+        border-radius: 20px;
+    }
+}
