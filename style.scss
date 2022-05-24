@@ -2,3 +2,21 @@
 @import "layout";
 @import "details";
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+
+@media screen and (max-width: 800px) {
+    header h1 {
+      font-size: 1.5rem;
+    }
+    header h2{
+      font-size: 1rem;
+    }
+    form input {
+      width: 250px;
+      font-size: 1.2rem;
+    }
+    form button {
+      font-size: 0.9rem;
+      width: 55px;
+      height: 30px;
+    }
+  }
