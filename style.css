@@ -36,18 +36,24 @@ body main form {
 }
 
 div.list-cont {
-  width: 650px;
+  width: 600px;
   margin-top: 60px;
 }
 
 div.list-cont .todo-list .todo-item {
   min-height: 80px;
+  overflow: hidden;
+  text-overflow: ellipsis;
   margin-bottom: 30px;
   background-color: rgba(255, 255, 255, 0.25);
   border-radius: 10px;
   -webkit-backdrop-filter: blur(2px);
           backdrop-filter: blur(2px);
   padding: 15px;
+}
+
+div.list-cont .todo-list .todo-item:hover {
+  background-color: rgba(255, 255, 255, 0.4);
 }
 
 header h1 {
@@ -67,7 +73,7 @@ form input {
   border-bottom: 2px solid white;
   outline: 1px;
   font-size: 1.5rem;
-  width: 650px;
+  width: 86.5%;
   padding: 8px;
   background-color: transparent;
   color: white;
@@ -111,19 +117,54 @@ form input:focus::-ms-input-placeholder {
 
 form button {
   vertical-align: bottom;
-  width: 70px;
+  width: 12%;
   height: 35px;
   background-color: rgba(255, 255, 255, 0.15);
   font-size: 1.3rem;
   font-weight: bold;
   color: white;
   border-radius: 20px;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-          box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 1.95px 1.95px 2.6px;
+          box-shadow: rgba(0, 0, 0, 0.2) 1.95px 1.95px 2.6px;
 }
 
 form button:hover {
   background-color: #3b74a5;
+}
+
+li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+li .btn-wrapper .check-btn {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  color: rgba(255, 255, 255, 0.6);
+  margin-right: 20px;
+}
+
+li .btn-wrapper .check-btn:hover {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+li .btn-wrapper .remove-btn {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+li .btn-wrapper .remove-btn:hover {
+  color: rgba(255, 255, 255, 0.9);
 }
 
 @media screen and (max-width: 730px) {
@@ -133,17 +174,20 @@ form button:hover {
   header h2 {
     font-size: 1rem;
   }
+  form {
+    width: 340px;
+  }
   form input {
-    width: 250px;
+    width: 83%;
     font-size: 1.2rem;
   }
   form button {
     font-size: 0.9rem;
-    width: 55px;
+    width: 15%;
     height: 30px;
   }
   div.list-cont {
-    width: 250px;
+    width: 340px;
   }
 }
 /*# sourceMappingURL=style.css.map */

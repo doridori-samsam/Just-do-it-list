@@ -24,25 +24,28 @@ body{
         margin-top: 40px;
         width: auto;
        form{
-           margin-top: 100px;
+            margin-top: 100px;
         }
     }
 }
 
 div.list-cont{
-    width: 650px;
+    width: 600px;
     margin-top: 60px;
-    //border:1px solid red;
     .todo-list{
         //min-width 정하기 - media query
         .todo-item{
             min-height: 80px;
+            overflow:hidden;
+            text-overflow:ellipsis;
             margin-bottom: 30px;
             background-color: rgba(255, 255, 255, 0.25);
-            //border:1px solid red;
             border-radius: 10px;
             backdrop-filter: blur(2px);
             padding: 15px;
+            &:hover{
+                background-color: rgba(255, 255, 255, 0.4);
+            }
         }
     }
 }

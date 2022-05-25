@@ -17,24 +17,28 @@ const todoInput = document.querySelector('.write-todo');
 const addButton = document.querySelector('#add-list');
 const addedList = document.querySelector('.todo-list');
 
-//add 버튼 클릭 이벤트
+//add(추가) 버튼 클릭 이벤트
 addButton.addEventListener('click', ()=> {
   event.preventDefault();
   const newList = document.createElement('li');
-  newList.innerText = 'hey';
+  newList.innerText = todoInput.value;
   newList.classList.add('todo-item');
+  //버튼 wrapper
+  const btnWrapper = document.createElement('div');
+  btnWrapper.classList.add('btn-wrapper');
+  newList.appendChild(btnWrapper);
 
-  //check toggle
+  //체크버튼
   const checkBox = document.createElement('button');
   checkBox.innerHTML = '<i class="fa-solid fa-square-check"></i>';
   checkBox.classList.add('check-btn');
-  newList.appendChild(checkBox);
+  btnWrapper.appendChild(checkBox);
 
-  //delete button
+  //삭제버튼
   const trashButton = document.createElement('button');
   trashButton.innerHTML = '<i class="fa-solid fa-trash-can"></i>';
   trashButton.classList.add('remove-btn');
-  newList.appendChild(trashButton);
+  btnWrapper.appendChild(trashButton);
 
   //append to ul list
   addedList.appendChild(newList);

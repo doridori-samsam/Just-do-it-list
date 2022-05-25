@@ -18,7 +18,7 @@ form {
         border-bottom: 2px solid white;
         outline: 1px;
         font-size: 1.5rem;
-        width: 650px;
+        width: 86.5%;
         padding: 8px;
         background-color: transparent;
         color: white;
@@ -44,19 +44,44 @@ form {
 
     button{
         vertical-align: bottom;
-        width: 70px;
+        width: 12%;
         height: 35px;
         background-color: rgba(255, 255, 255, 0.15);
         font-size: 1.3rem;
         font-weight: bold;
         color: white;
         border-radius: 20px;
-        box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+        box-shadow: rgba(0, 0, 0, 0.2) 1.95px 1.95px 2.6px;
         &:hover{
             background-color:  rgb(59, 116, 165);
         }
     }
-}
+  }
+
+  li{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .btn-wrapper{ 
+        .check-btn{
+        width: fit-content;
+        color: rgba(255,255,255,0.6);
+        margin-right: 20px;
+        &:hover{
+          color: rgba(255,255,255,0.9);
+        }
+      }
+      .remove-btn{
+        width: fit-content;
+        color: rgba(255,255,255,0.6);
+        &:hover{
+          color:rgba(255,255,255,0.9);
+        }
+      }}
+  }
+
+
+
 
 @media screen and (max-width: 730px) {
     header h1 {
@@ -65,17 +90,20 @@ form {
     header h2{
       font-size: 1rem;
     }
+    form{
+      width: 340px;
+    }
     form input {
-      width: 250px;
+      width: 83%;
       font-size: 1.2rem;
     }
     form button {
       font-size: 0.9rem;
-      width: 55px;
+      width: 15%;
       height: 30px;
     }
     div.list-cont{
-        width: 250px;
+        width: 340px;
     }
 
   }
