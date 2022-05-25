@@ -1,31 +1,33 @@
-@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap");
-:root {
-  --bg-color: #073059;
-}
-
+@import url("https://fonts.googleapis.com/css2?family=Gowun+Batang&display=swap");
 * {
   padding: 0;
   margin: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  font-family: 'Gowun Batang', serif;
 }
 
 body {
-  font-family: 'Nanum Gothic', sans-serif;
+  font-family: 'Gowun Batang', serif;
   font-size: 20px;
   color: white;
-  background-color: #1E96E0;
   min-height: 100vh;
+  padding-bottom: 50px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  overflow-y: scroll;
+  background: url("background.jpg") fixed;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 body main {
-  margin-top: 80px;
+  margin-top: 40px;
   width: auto;
 }
 
@@ -33,49 +35,62 @@ body main form {
   margin-top: 100px;
 }
 
-@media screen and (max-width: 800px) {
-  input {
-    width: 150px;
-  }
+div.list-cont {
+  width: 650px;
+  margin-top: 60px;
+}
+
+div.list-cont .todo-list .todo-item {
+  min-height: 80px;
+  margin-bottom: 30px;
+  background-color: rgba(255, 255, 255, 0.25);
+  border-radius: 10px;
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
+  padding: 15px;
 }
 
 header h1 {
-  font-size: 3rem;
+  font-size: 2.3rem;
   font-weight: bold;
   margin-bottom: 20px;
 }
 
 header h2 {
   font-size: 1.8rem;
-  color: #97cfff;
+  color: #6e95b7;
 }
 
 form input {
-  font-family: 'Nanum Gothic', sans-serif;
+  font-family: 'Gowun Batang', serif;
   border: none;
   border-bottom: 2px solid white;
   outline: 1px;
   font-size: 1.5rem;
-  width: 700px;
+  width: 650px;
   padding: 8px;
   background-color: transparent;
   color: white;
 }
 
 form input::-webkit-input-placeholder {
-  color: #97cfff;
+  color: #6e95b7;
+  font-family: 'Gowun Batang', serif;
 }
 
 form input:-ms-input-placeholder {
-  color: #97cfff;
+  color: #6e95b7;
+  font-family: 'Gowun Batang', serif;
 }
 
 form input::-ms-input-placeholder {
-  color: #97cfff;
+  color: #6e95b7;
+  font-family: 'Gowun Batang', serif;
 }
 
 form input::placeholder {
-  color: #97cfff;
+  color: #6e95b7;
+  font-family: 'Gowun Batang', serif;
 }
 
 form input:focus::-webkit-input-placeholder {
@@ -96,20 +111,26 @@ form input:focus::-ms-input-placeholder {
 
 form button {
   vertical-align: bottom;
-  width: 90px;
-  height: 40px;
-  background-color: #1e6fe9;
-  font-size: 1.5rem;
+  width: 70px;
+  height: 35px;
+  background-color: rgba(255, 255, 255, 0.15);
+  font-size: 1.3rem;
   font-weight: bold;
   color: white;
   border-radius: 20px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+          box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 
-@media screen and (max-width: 800px) {
+form button:hover {
+  background-color: #3b74a5;
+}
+
+@media screen and (max-width: 730px) {
   header h1 {
     font-size: 1.5rem;
   }
-  header h2{
+  header h2 {
     font-size: 1rem;
   }
   form input {
@@ -120,6 +141,9 @@ form button {
     font-size: 0.9rem;
     width: 55px;
     height: 30px;
+  }
+  div.list-cont {
+    width: 250px;
   }
 }
 /*# sourceMappingURL=style.css.map */

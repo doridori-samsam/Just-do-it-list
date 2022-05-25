@@ -2,18 +2,26 @@
     padding:0;
     margin:0;
     box-sizing: border-box;
+    font-family: 'Gowun Batang', serif;
 }
 
 body{
-    font-family: 'Nanum Gothic', sans-serif;
+    font-family: 'Gowun Batang', serif;
     font-size: 20px;
     color: white;
-    background-color: #1E96E0;
     min-height: 100vh;
+    padding-bottom: 50px;
     display: flex;
     justify-content: center;
+    overflow-y: scroll;
+    background: url('background.jpg') fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+   
     main{
-        margin-top: 80px;
+        margin-top: 40px;
         width: auto;
        form{
            margin-top: 100px;
@@ -21,8 +29,22 @@ body{
     }
 }
 
-@media screen and (max-width:800px){
-        input {
-            width: 150px;
+div.list-cont{
+    width: 650px;
+    margin-top: 60px;
+    //border:1px solid red;
+    .todo-list{
+        //min-width 정하기 - media query
+        .todo-item{
+            min-height: 80px;
+            margin-bottom: 30px;
+            background-color: rgba(255, 255, 255, 0.25);
+            //border:1px solid red;
+            border-radius: 10px;
+            backdrop-filter: blur(2px);
+            padding: 15px;
         }
+    }
 }
+
+
