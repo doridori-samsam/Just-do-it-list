@@ -20,6 +20,9 @@ const addedList = document.querySelector('.todo-list');
 //add(추가) 버튼 클릭 이벤트
 addButton.addEventListener('click', ()=> {
   event.preventDefault();
+  if(todoInput.value == ''){
+    alert('해야 할 일이 없군요! 푹 쉬는건 어떨까요? :)');
+  } else{
   const newList = document.createElement('li');
   newList.innerText = todoInput.value;
   newList.classList.add('todo-item');
@@ -42,4 +45,8 @@ addButton.addEventListener('click', ()=> {
 
   //append to ul list
   addedList.appendChild(newList);
+  
+  //add버튼으로 리스트 추가 후 입력창 초기화
+  todoInput.value ='';
+  }
 });
