@@ -36,8 +36,7 @@ div.list-cont{
         //min-width 정하기 - media query
         .todo-item{
             min-height: 80px;
-            overflow:hidden;
-            text-overflow:ellipsis;
+            word-break: break-word;
             margin-bottom: 30px;
             background-color: rgba(255, 255, 255, 0.25);
             border-radius: 10px;

@@ -42,8 +42,7 @@ div.list-cont {
 
 div.list-cont .todo-list .todo-item {
   min-height: 80px;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  word-break: break-word;
   margin-bottom: 30px;
   background-color: rgba(255, 255, 255, 0.25);
   border-radius: 10px;
@@ -144,6 +143,12 @@ li {
           justify-content: space-between;
 }
 
+li .btn-wrapper {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  margin-left: 30px;
+}
+
 li .btn-wrapper .check-btn {
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -154,6 +159,7 @@ li .btn-wrapper .check-btn {
 
 li .btn-wrapper .check-btn:hover {
   color: rgba(255, 255, 255, 0.9);
+  cursor: pointer;
 }
 
 li .btn-wrapper .remove-btn {
@@ -165,6 +171,7 @@ li .btn-wrapper .remove-btn {
 
 li .btn-wrapper .remove-btn:hover {
   color: rgba(255, 255, 255, 0.9);
+  cursor: pointer;
 }
 
 @media screen and (max-width: 730px) {
