@@ -51,3 +51,4 @@ addButton.addEventListener('click', ()=> {
   }
 });
 
+//삭제,check 버튼 구현
