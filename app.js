@@ -9,7 +9,7 @@ const weekNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
 const todayWeek = weekNames[today.getDay()];
 
 //현재 날짜 출력
-const showToday = document.querySelector(".today");
+const showToday = document.querySelector('.today');
 showToday.textContent = `${todayMonth} ${todayDate} ${todayWeek}`
 
 //메모 추가 기능 selector
@@ -48,7 +48,14 @@ addButton.addEventListener('click', ()=> {
   
   //add버튼으로 리스트 추가 후 입력창 초기화
   todoInput.value ='';
+  
+  //삭제버튼 - 삭제 기능
+  trashButton.addEventListener('click', ()=>{
+  console.log('see');
+  trashButton.parentElement.parentElement.remove();
+   })  
   }
 });
 
-//삭제,check 버튼 구현
+
+
