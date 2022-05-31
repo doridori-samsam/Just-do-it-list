@@ -51,9 +51,13 @@ addButton.addEventListener('click', ()=> {
   
   //삭제버튼 - 삭제 기능
   trashButton.addEventListener('click', ()=>{
-  console.log('see');
   trashButton.parentElement.parentElement.remove();
-   })  
+   })
+   
+   //체크버튼 - 체크 기능
+   checkBox.addEventListener('click', ()=>{
+   checkBox.parentElement.parentElement.classList.toggle('completed');
+   } )
   }
 });
 

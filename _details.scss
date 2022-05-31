@@ -62,7 +62,7 @@ form {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      .btn-wrapper{ 
+       .btn-wrapper{ 
         flex-shrink:0;
         margin-left: 30px;
         .check-btn{
@@ -84,6 +84,10 @@ form {
       }}
   }
 
+  .completed{
+    text-decoration: line-through;
+    opacity: 0.6;
+  }
 
 
 @media screen and (max-width: 730px) {
