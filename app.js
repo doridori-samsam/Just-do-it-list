@@ -61,5 +61,5 @@ addButton.addEventListener('click', ()=> {
   }
 });
 
-
+ //local storage function needs to be added
 
