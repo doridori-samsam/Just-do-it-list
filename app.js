@@ -67,6 +67,7 @@ addButton.addEventListener('click', function submit(){
   }
 });
 
+<<<<<<< HEAD
 //local storage 기능
 function saveLocalTodos(todo){
   //CHECK--HEY do I already have lists in there?
@@ -89,4 +90,7 @@ function getTodos(){
   }
   
 }
+=======
+ //local storage function needs to be added
+>>>>>>> 4aae9927eded7b1896a0b6a76bf333ddd6792ee5
 
