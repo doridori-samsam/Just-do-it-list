@@ -1,7 +1,7 @@
 //현재 날짜 데이터
 const today = new Date();
 const monthNames = ["January", "February", "March", "April", "May", "June",
-  "July", "August", "September", "October", "November", "December"
+"July", "August", "September", "October", "November", "December"
 ];
 const todayMonth = monthNames[today.getMonth()];
 const todayDate = today.getDate();
@@ -18,14 +18,18 @@ const addButton = document.querySelector('#add-list');
 const addedList = document.querySelector('.todo-list');
 
 //add(추가) 버튼 클릭 이벤트
-addButton.addEventListener('click', ()=> {
+addButton.addEventListener('click', function submit(){
   event.preventDefault();
   if(todoInput.value == ''){
     alert('해야 할 일이 없군요! 푹 쉬는건 어떨까요? :)');
   } else{
-  const newList = document.createElement('li');
-  newList.innerText = todoInput.value;
-  newList.classList.add('todo-item');
+    const newList = document.createElement('li');
+    newList.innerText = todoInput.value;
+    newList.classList.add('todo-item');
+    
+    //로컬 스토리지
+    saveLocalTodos(todoInput.value);
+
   //버튼 wrapper
   const btnWrapper = document.createElement('div');
   btnWrapper.classList.add('btn-wrapper');
@@ -57,9 +61,32 @@ addButton.addEventListener('click', ()=> {
    //체크버튼 - 체크 기능
    checkBox.addEventListener('click', ()=>{
    checkBox.parentElement.parentElement.classList.toggle('completed');
-   } )
+   })
+  
+  
   }
 });
 
+//local storage 기능
+function saveLocalTodos(todo){
+  //CHECK--HEY do I already have lists in there?
+  let todos;
+  if(localStorage.getItem('todos') === null){
+    todos = [];
+  } else {
+    todos = JSON.parse(localStorage.getItem('todos'));
+  }
+  todos.push(todo);
+  localStorage.setItem('todos', JSON.stringify(todos));
+}
 
+function getTodos(){
+  let todos;
+  if(localStorage.getItem('todos') === null){
+    todos = [];
+  } else {
+    todos = JSON.parse(localStorage.getItem('todos'));
+  }
+  
+}
 
