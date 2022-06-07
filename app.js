@@ -17,6 +17,9 @@ const todoInput = document.querySelector('.write-todo');
 const addButton = document.querySelector('#add-list');
 const addedList = document.querySelector('.todo-list');
 
+//localStorage function 실행 이벤트
+document.addEventListener('DOMContentLoaded', getTodos);
+
 //add(추가) 버튼 클릭 이벤트
 addButton.addEventListener('click', function submit(){
   event.preventDefault();
@@ -27,7 +30,7 @@ addButton.addEventListener('click', function submit(){
     newList.innerText = todoInput.value;
     newList.classList.add('todo-item');
     
-    //로컬 스토리지
+    //로컬 스토리지에 리스트 추가
     saveLocalTodos(todoInput.value);
 
   //버튼 wrapper
@@ -56,6 +59,7 @@ addButton.addEventListener('click', function submit(){
   //삭제버튼 - 삭제 기능
   trashButton.addEventListener('click', ()=>{
   trashButton.parentElement.parentElement.remove();
+  removeLocalTodos(todo);
    })
    
    //체크버튼 - 체크 기능
@@ -67,7 +71,7 @@ addButton.addEventListener('click', function submit(){
   }
 });
 
-<<<<<<< HEAD
+
 //local storage 기능
 function saveLocalTodos(todo){
   //CHECK--HEY do I already have lists in there?
@@ -88,9 +92,57 @@ function getTodos(){
   } else {
     todos = JSON.parse(localStorage.getItem('todos'));
   }
-  
-}
-=======
- //local storage function needs to be added
->>>>>>> 4aae9927eded7b1896a0b6a76bf333ddd6792ee5
+  todos.forEach(function(todo){
+    const newList = document.createElement('li');
+    newList.innerText = todo;
+    newList.classList.add('todo-item');
+    
+  //버튼 wrapper
+  const btnWrapper = document.createElement('div');
+  btnWrapper.classList.add('btn-wrapper');
+  newList.appendChild(btnWrapper);
 
+  //체크버튼
+  const checkBox = document.createElement('button');
+  checkBox.innerHTML = '<i class="fa-solid fa-square-check"></i>';
+  checkBox.classList.add('check-btn');
+  btnWrapper.appendChild(checkBox);
+
+  //삭제버튼
+  const trashButton = document.createElement('button');
+  trashButton.innerHTML = '<i class="fa-solid fa-trash-can"></i>';
+  trashButton.classList.add('remove-btn');
+  btnWrapper.appendChild(trashButton);
+
+  //append to ul list
+  addedList.appendChild(newList);
+
+  //삭제버튼 - 삭제 기능
+  trashButton.addEventListener('click', ()=>{
+    trashButton.parentElement.parentElement.remove();
+    removeLocalTodos(todo);
+     })
+     
+     //체크버튼 - 체크 기능
+     checkBox.addEventListener('click', ()=>{
+     checkBox.parentElement.parentElement.classList.toggle('completed');
+     })
+    
+ })
+}
+
+//localStorage에서 리스트 삭제
+function removeLocalTodos(todo){
+   //CHECK--HEY do I already have lists in there?
+   let todos;
+   if(localStorage.getItem('todos') === null){
+     todos = [];
+   } else {
+     todos = JSON.parse(localStorage.getItem('todos'));
+   }
+   const todoIndex = todos.children[0].innerText;
+   todos.splice(todos.indexOf(todoIndex), 1);
+   localStorage.setItem('todos', JSON.stringify(todos));
+}
+
+ 
