@@ -27,7 +27,7 @@
 <br>
 
 ## 🛠개선해야 할 점
-[ ]리스트에 체크가 되었을 때 localStorage에 저장되는 기능을 구현하지 못했다. String만 저장되는 localStorage 특성상, *'.completed'* 클래스와 그에 따른 CSS 속성을 어떻게 배열에 담을지가 관건.
+- [ ] 리스트에 체크가 되었을 때 localStorage에 저장되는 기능을 구현하지 못했다. String만 저장되는 localStorage 특성상, *'.completed'* 클래스와 그에 따른 CSS 속성을 어떻게 배열에 담을지가 관건.
 
 <br>
 
