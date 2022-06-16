@@ -57,17 +57,19 @@ addButton.addEventListener('click', function submit(){
   todoInput.value ='';
   
   //삭제버튼 - 삭제 기능
-  trashButton.addEventListener('click', ()=>{
-  trashButton.parentElement.parentElement.remove();
-  removeLocalTodos(todo);
+  trashButton.addEventListener('click', (e)=>{
+    //애니메이션
+    trashButton.parentElement.parentElement.classList.add('fall');
+    trashButton.parentElement.parentElement.addEventListener('transitionend', ()=>{
+    trashButton.parentElement.parentElement.remove();
    })
+  removeLocalTodos(todo);
+  })
    
    //체크버튼 - 체크 기능
    checkBox.addEventListener('click', ()=>{
    checkBox.parentElement.parentElement.classList.toggle('completed');
    })
-  
-  
   }
 });
 
@@ -118,17 +120,22 @@ function getTodos(){
   addedList.appendChild(newList);
 
   //삭제버튼 - 삭제 기능
-  trashButton.addEventListener('click', ()=>{
+  trashButton.addEventListener('click', (e)=>{
+  //애니메이션
+  trashButton.parentElement.parentElement.classList.add('fall');
+  trashButton.parentElement.parentElement.addEventListener('transitionend', ()=>{
     trashButton.parentElement.parentElement.remove();
-    removeLocalTodos(todo);
-     })
+   })
+  removeLocalTodos(todo);
+  })
      
-     //체크버튼 - 체크 기능
-     checkBox.addEventListener('click', ()=>{
-     checkBox.parentElement.parentElement.classList.toggle('completed');
-     })
-    
- })
+  //체크버튼 - 체크 기능
+  checkBox.addEventListener('click', ()=>{
+  checkBox.parentElement.parentElement.classList.toggle('completed');
+   })
+  })
+
+
 }
 
 //localStorage에서 리스트 삭제
@@ -140,9 +147,10 @@ function removeLocalTodos(todo){
    } else {
      todos = JSON.parse(localStorage.getItem('todos'));
    }
-   const todoIndex = todos.children[0].innerText;
-   todos.splice(todos.indexOf(todoIndex), 1);
+   console.log(todo);
+   todos.splice(todos.indexOf(todo), 1);
    localStorage.setItem('todos', JSON.stringify(todos));
 }
+
 
  

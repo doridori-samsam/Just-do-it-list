@@ -89,6 +89,11 @@ form {
     opacity: 0.6;
   }
 
+  .fall{
+    transform: translateY(8rem) rotateZ(20deg);
+    opacity: 0;
+    transition-duration: 0.4s;
+  }
 
 @media screen and (max-width: 730px) {
     header h1 {
