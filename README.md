@@ -2,6 +2,8 @@
 [Just-do-list로 이동](https://doridori-samsam.github.io/Just-do-list/)
 
 
+
+
 ## ✨Introduction
 메모장 만들기에서 더 나아가 'Just do it'을 모토로 한 투두리스트.
 내가 해야 할 일들을 추가하고, 완료된 일들은 체크 혹은 삭제할 수 있습니다.
